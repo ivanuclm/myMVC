@@ -1,0 +1,13 @@
+{
+    "name": "ivaningeteam/my_first_mvc",
+    "description": "Mi primer framework MVC (Model, View, Controller) con PHP.",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "symfony/routing": "^5.4",
+        "symfony/http-foundation": "^5.4"
+    }
+}
