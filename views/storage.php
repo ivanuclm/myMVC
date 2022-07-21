@@ -26,21 +26,11 @@
         <br>
             <a href="<?php echo $routes->get('newentry')->getPath();?>" class="btn btn-success" role="button">Crear nueva entrada</a>
             <button type="button" class="btn btn-warning">Editar entrada</button>
-            <a href="<?php echo $routes->get('selectToDelete')->getPath();?>" class="btn btn-danger" role="button">Eliminar entradas</a>
+            <!--<a href="<?php echo $routes->get('selectToDelete')->getPath();?>" class="btn btn-danger" role="button">Eliminar entradas</a>-->
 
 
 
         <h1>My Storage:</h1>
-        <!--
-        <div class="row">
-        <div class="col-lg-1">id</div>
-        <div class="col-lg-1">title</div>
-        <div class="col-lg-1">description</div>
-        <div class="col-lg-1">price</div>
-        <div class="col-lg-1">sku</div>
-        <div class="col-lg-1">image</div>
-        </div> 
-        -->
 
         <?php 
         if(is_string($data)) :
@@ -67,14 +57,19 @@
                         #print_r($item["image"]);
                         #echo "<br>";
                         echo "<tr>";
-                        echo "<td>".$item["id"]."</td>";
-                        echo "<td>".$item["title"]."</td>";
-                        echo "<td>".$item["description"]."</td>";
-                        echo "<td>".$item["price"]."</td>";
-                        echo "<td>".$item["sku"]."</td>";
-                        echo "<td>";
-                        echo $item["image"];
-                        echo "</td>";
+                            
+                            echo "<td><input type=\"checkbox\" id=\"ckID\" name=\"ckID\">";
+                            echo "<label for=\"ckID\">".$item["id"]."</label></td>";
+
+                            echo "<td>".$item["title"]."</td>";
+                            echo "<td>".$item["description"]."</td>";
+                            echo "<td>".$item["price"]."</td>";
+                            echo "<td>".$item["sku"]."</td>";
+
+                            echo "<td>";
+                            echo $item["image"];
+                            echo "</td>";
+
                         echo "</tr>";
                     }
                     ?>
