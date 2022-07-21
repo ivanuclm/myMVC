@@ -42,5 +42,10 @@ class StorageController
         require_once APP_ROOT . '/views/addsuccess.php';
     }
 
+    public function selectToDeleteAction(RouteCollection $routes)
+    {
+        require_once APP_ROOT . '/views/selectdelete.php';
+    }
+
 }
 ?>

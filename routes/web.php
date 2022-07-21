@@ -11,5 +11,7 @@ $routes->add('storage', new Route(constant('URL_SUBFOLDER') . '/storage', array(
 $routes->add('homepage', new Route(constant('URL_SUBFOLDER') . '/', array('controller' => 'PageController', 'method'=>'indexAction'), array()));
 $routes->add('newentry', new Route(constant('URL_SUBFOLDER') . '/storage/newEntry', array('controller' => 'StorageController', 'method'=>'newEntryAction'), array()));
 $routes->add('addentry', new Route(constant('URL_SUBFOLDER') . '/storage/edited', array('controller' => 'StorageController', 'method'=>'addEntryAction'), array()));
+$routes->add('selectToDelete', new Route(constant('URL_SUBFOLDER') . '/storage/deleting', array('controller' => 'StorageController', 'method'=>'selectToDeleteAction'), array()));
+
 
 ?>

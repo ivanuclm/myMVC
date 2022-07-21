@@ -16,17 +16,10 @@
 <body>
 
     <section>
-        <h1>Búsqueda por nombre:</h1>
-        
-        <form action = "storage" method="POST">
-            <input id="search" name="search" type="text" placeholder="Escriba el nombre aquí.">
-            <input id="submit" type="submit" value="Buscar">
         </form>
         <br>
         <br>
-            <a href="<?php echo $routes->get('newentry')->getPath();?>" class="btn btn-success" role="button">Crear nueva entrada</a>
-            <button type="button" class="btn btn-warning">Editar entrada</button>
-            <a href="<?php echo $routes->get('selectToDelete')->getPath();?>" class="btn btn-danger" role="button">Eliminar entradas</a>
+            <a href="<?php echo $routes->get('selectToDelete')->getPath();?>" class="btn btn-danger" role="button">Eliminar entradas seleccionadas</a>
 
 
 
@@ -53,6 +46,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <td><strong>selection</strong></td>
                         <td><strong>id</strong></td>
                         <td><strong>title</strong></td>
                         <td><strong>description</strong></td>
@@ -67,6 +61,7 @@
                         #print_r($item["image"]);
                         #echo "<br>";
                         echo "<tr>";
+                        echo "<td><input type=\"checkbox\" name=\"check\">".$item["id"]."</td>";
                         echo "<td>".$item["id"]."</td>";
                         echo "<td>".$item["title"]."</td>";
                         echo "<td>".$item["description"]."</td>";
