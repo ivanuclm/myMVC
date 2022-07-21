@@ -11,17 +11,36 @@ class StorageController
 	public function showAction(RouteCollection $routes)
 	{
         $storage = new Storage();
-        $data = $storage->read();
-        
+        #print_r($_POST);
+        if(array_key_exists('search', $_POST)){
+            
+            #print_r($_POST['search']);
+            #echo "<br>";
+            $filter = $_POST['search'];
+            $data = $storage->search($filter);
+        }
+        else{
+            $data = $storage->read();
+        }
         require_once APP_ROOT . '/views/storage.php';
 	}
 
-    public function searchAction(string $searchQuery, RouteCollection $routes)
-	{
+    public function newEntryAction(RouteCollection $routes)
+    {
+        require_once APP_ROOT . '/views/addstorage.php';
+    }
+
+    public function addEntryAction(RouteCollection $routes)
+    {
+        #exit(print_r("hellegao"));
         $storage = new Storage();
-        $fullData = $storage->read();
-        $data = $fullData->search($searchQuery);
 
-        require_once APP_ROOT . '/views/storage.php';
-	}
+        $newInfo = $_POST;
+        $storage->create($newInfo);
+
+        $data = $storage->read();
+        require_once APP_ROOT . '/views/addsuccess.php';
+    }
+
 }
+?>

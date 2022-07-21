@@ -12,7 +12,9 @@ class PageController
 	{
 		$routeToProduct = str_replace('{id}', 1, $routes->get('product')->getPath());
         $routeToStorage = $routes->get('storage')->getPath();
-		$routeToSearch = $routes->get('search')->getPath();
+		#$routeToNewEntry = $routes->get('newentry')->getPath();
+		#$routeToAddEntry = $routes->get('addentry')->getPath();
+
         require_once APP_ROOT . '/views/home.php';
 	}
 }
